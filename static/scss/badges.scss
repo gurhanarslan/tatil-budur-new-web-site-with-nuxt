@@ -1,0 +1,27 @@
+$brand-badge-yellow: #FACA00;
+.badges {
+  position: relative;
+  height: 65px;
+  width: 65px;
+  @include JustifyContent(center);
+  @include Font(12px, 500);
+  background: $brand-badge-yellow;
+  border-radius: 100%;
+  text-align: center;
+  text-transform: capitalize;
+  -webkit-transform-origin: 100px -71px;
+  -moz-transform-origin: 100px -71px;
+  -o-transform-origin: 100px -71px;
+  transform-origin: 100px -71px;
+  big{
+    z-index: 2;
+  }
+  & span {
+      z-index: 1;
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      background-color: $brand-badge-yellow;
+  }
+}
+

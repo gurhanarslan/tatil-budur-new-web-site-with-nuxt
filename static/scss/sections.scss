@@ -1,0 +1,44 @@
+@import './fonts.scss';
+@import './variant';
+@mixin BaseSection() {
+    margin-top: 40px;
+    padding: 54px 90px;
+    border-radius: 26px;
+    & h1 {
+      @include Font(24px, 500);
+    }
+    & .tabs {
+      @include JustifyContent(space-between);
+      a {
+        float: right;
+        text-decoration: none;
+        @include Font(14px, 400);
+        color: $brand-on-focus-color;
+        font-weight: 300;
+        cursor: pointer;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        @include JustifyContent(flex-start);
+        li {
+          @include Font(16px, 400);
+          color: $brand-inactive-font-color;
+          margin-right: 30px;
+          line-height: 3;
+          font-weight: 300;
+          border-bottom: 2px solid transparent;
+          text-transform: capitalize;
+          &.active {
+            font-weight: normal;
+            @include Font(16px, 600);
+            border-bottom: 2px solid #115bb9;
+          }
+        }
+      }
+    }
+}
+.section {
+  @include BaseSection()
+}

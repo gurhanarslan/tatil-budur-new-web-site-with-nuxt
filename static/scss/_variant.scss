@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+$font-family: 'Poppins', sans-serif;
+$brand-font-color: #3F536C;
+$brand-soft-color: #6F7E8F;
+$tag-background-color: #cfd4da33;
+$brand-on-focus-color: #2A5AB3;
+$brand-inactive-font-color: #6F7E90;
+$brand-border-color: linear-gradient(to right, #115BB9 0%, #9C2A66 36.54%, #EDBD40 57.69%, #90C061 78.84%) 5;
+$brand-border: 1px solid #cfd4da;
+$brand-border-color-on-focus: 1px solid $brand-on-focus-color;
+@mixin JustifyContent($content) {
+    display: flex;
+    align-items: center;
+    justify-content: $content;
+}

@@ -1,0 +1,49 @@
+@import './main.scss';
+.primary-carousel {
+  padding: get-vh(49px) 0;
+  @include JustifyContent(center);
+  & .carousel-card {
+    width: 100%;
+    border: $brand-border;
+    background-color: #fff;
+    padding-top: get-vh(80px);
+    height: 226px;
+    padding-bottom: get-vh(85px);
+    border-radius: 13px;
+    padding-left: get-vh(60px);
+    padding-right: get-vh(40px);
+    & .content {
+      & .tabs {
+        & ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          @include JustifyContent(flex-start);
+          @include Font(16px, 400);
+          li {
+            &.active {
+              @include Font(16px, 500);
+              border-bottom: 2px solid;
+              border-image: $brand-border-color !important  
+            }
+            text-transform: capitalize;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding-bottom: get-vh(9px);
+            margin-right:get-vw(17px) !important;
+            border-bottom: 2px solid transparent;
+            & img {
+              width: 10px !important;
+              height: 14px !important;
+              margin-right :get-vw(6px);
+            }
+          }
+        }
+      }
+      & .tab-items {
+          margin-top: 20px;
+      }
+    }
+  }
+}

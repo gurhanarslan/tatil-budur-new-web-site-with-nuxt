@@ -1,0 +1,60 @@
+.container-up {
+    width: 100%;
+    max-width: 1180px !important;
+    margin: auto
+}
+.container-down {
+    width: 100%;
+    max-width: 1360px !important;
+    margin: auto
+}
+.w-100 {
+    width: 100%
+}
+
+h6 {
+    margin: 0 !important;
+    padding: 0 !important
+}
+
+// Tatilbudur.com font işlemleri
+@import './fonts.scss';
+// Tatilbudur.com renk ve functions
+@import './variant';
+// Tatilbudur.com inputları
+@import'./input.scss';
+// Tatilbudur.com buttonlar
+@import'./button.scss';
+
+// Tatilbudur.com discount badge 
+@import './badges.scss';
+// device size calculator
+@import './GetDeviceSize.scss';
+// grid system
+@import './grid.min.scss';
+
+// sections
+@import './sections.scss';
+
+.highlight {
+    color:  $brand-on-focus-color !important;
+}
+.loading {
+    @include JustifyContent(center);
+    @include Font(14px, 500);
+    height: 150px;
+    background: white;
+    border-radius: 0 0 6px 6px;
+}
+.custom-dot-class {
+    bottom: 23px !important;
+    & li {
+        margin:  0px -3px !important;
+      & button::before{
+        color: white !important;
+      }
+      &.slick-active button:before {
+          color: white !important;
+      }
+    }
+}

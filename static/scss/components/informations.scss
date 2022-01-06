@@ -1,0 +1,50 @@
+@import '../variant';
+@import '../fonts.scss';
+.informations {
+  padding: 0 90px;
+  margin-top: 40px;
+  & .collapse {
+    position: relative;
+    margin-top: 20px
+  }
+  & h2 {
+    @include Font(16px, 500);
+  }
+  & p {
+    @include Font(14px, 300);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    &.showed-more {
+        display: block;
+    }
+  }
+  & blockquote.none {
+    visibility: hidden;
+    position: absolute;
+  }
+  & .filigran {
+    position: absolute;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 3;
+    height: 50px;
+    top: 36px;
+    width: 100%;
+  }
+  & .show-more {
+    & button {
+      @include Font(14px, 600);
+      color: #115bb9 !important;
+      background-color: transparent;
+      border: none;
+    }
+  }
+}

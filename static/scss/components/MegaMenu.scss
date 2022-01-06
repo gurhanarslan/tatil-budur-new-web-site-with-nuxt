@@ -1,0 +1,132 @@
+@import '../variant';
+@import '../fonts.scss';
+.mega-menu {
+  padding: 41px 45px 41px 15px;
+  background-color: white;
+  box-shadow: 0px 5px 36px #00000029;
+  border-radius: 16px;
+  min-height: 400px;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 5;
+  width: 100%;
+  max-width: 990px;
+  & .left-side {
+    & ul.menu {
+      & li {
+        cursor: pointer;
+        & .menu {
+          @include JustifyContent(flex-start);
+        }
+        &.active {
+          background-color: rgba($color: #cfd4da, $alpha: 0.2);
+          border-radius: 8px;
+          & img.icon {
+            float: right;
+            transform: rotate(270deg);
+          }
+        }
+
+        list-style: none;
+        @include JustifyContent(space-between);
+        margin: 9px 0;
+        padding: 9px 10px;
+        & img.title {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        & span {
+          @include Font(14px, 500);
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+  & .right-side {
+    margin-top: 1em;
+    & .view-all {
+      padding: 9px;
+      margin-top: 20px;
+      @include Font(14px, 400);
+      color: $brand-on-focus-color;
+    }
+    & ul.hotels {
+      margin: 0 20px 0 0;
+      padding: 0;
+      li {
+        list-style: none;
+        padding: 9px;
+        @include JustifyContent(space-between);
+        span a {
+          text-decoration: none;
+          @include Font(14px, 400);
+          color: rgba($color: $brand-font-color, $alpha: 0.8);
+        }
+        small {
+          @include Font(12px, 400);
+          width: 55px;
+          text-align: left;
+          color: rgba($color: $brand-font-color, $alpha: 0.5);
+        }
+      }
+    }
+    & .advertisements {
+      & .adv {
+        position: relative;
+      }
+      display: flex;
+      flex-direction: column;
+      & img.adv-img {
+        border-radius: 12px;
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+      & .filigran {
+        height: 150px;
+        width: 100%;
+        border-radius: 12px;
+        position: absolute;
+        background: #3f536c13 0% 0% no-repeat padding-box;
+        opacity: 1;
+        top: 0;
+        @include JustifyContent(flex-start);
+        & .item {
+          margin-top: 30px;
+          padding: 0 30px 0 20px;
+          & h4 {
+            @include Font(16px, 700);
+            color: white;
+            margin: 0;
+            padding: 0;
+          }
+          & img.item-img {
+            width: 27px;
+            display: block;
+            margin-bottom: 3px;
+          }
+        }
+      }
+    }
+    & .alert-warning {
+      border: 1px solid rgba($color: #EA5A0E, $alpha: .2);
+      border-radius: 6px;
+      margin-top: 8px;
+      padding: 9px 15px;
+      background-color: rgba($color: #EA5A0E, $alpha: 0.2);
+      & img.alert {
+        width: 23px;
+        margin-right: 10px;
+      }
+      & span {
+        @include Font(14px, 400);
+        color: #EA5A0E;
+      }
+      @include JustifyContent(flex-start);
+    }
+  }
+}

@@ -1,0 +1,298 @@
+@import "../variant"
+@import "../fonts.scss"
+$dark: #000
+
+.inp
+  position: relative
+  margin: auto
+  width: 100%
+  max-width: 280px
+  border-radius: 3px
+  overflow: hidden
+  .icon
+    position: absolute
+    top: 30%
+    transform: translate(-50%, -50%)
+    left: 25px
+    &-select
+      right: 15px
+      top: -10px
+      position: absolute
+    img
+      width: 16px
+  .label
+    &.search
+      top: -7px !important
+      position: absolute
+      left: 46px
+    &.no-icon
+      top: -10px !important
+      left: 9px !important
+    @include Font(14px, 400)
+    color: $brand-inactive-font-color
+    font-weight: 500
+    transform-origin: 0 0
+    position: absolute
+    top: 2px
+    left: 46px
+    transform: translate3d(0,0,0)
+    transition: all .2s ease
+    pointer-events: none
+  .focus-bg
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba($dark,.05)
+    z-index: -1
+    transform: scaleX(0)
+    transform-origin: left
+
+  input
+    @include Font(14px, 400)
+    color: $brand-on-focus-color !important
+    -webkit-appearance: none
+    appearance: none
+    width: 100%
+    border: 0
+    font-family: inherit
+    padding: 16px 12px 0 46px
+    height: 48px
+    border-radius: 6px
+    background: transparent
+    border: 1px solid $brand-on-focus-color
+    color: $dark
+    transition: all .15s ease
+    &.search
+      border: $brand-border !important
+    &.no-icon
+      padding: 16px 12px 0 6px !important
+    &:not(:placeholder-shown)
+      @include Font(14px, 500)
+      border: 1px solid $brand-on-focus-color !important
+      + .label
+        color: $brand-inactive-font-color
+        @include Font(10px, 400)
+        transform: translate3d(0,-5px,0) scale(.75)
+
+    &:focus
+      border: 1px solid $brand-on-focus-color !important
+      outline: none
+      @include Font(14px, 500)
+      + .label
+        color: $brand-inactive-font-color
+        transform: translate3d(0,-5px,0) scale(.75)
+        @include Font(10px, 400)
+        + .focus-bg
+          transform: scaleX(1)
+          transition: all .1s ease
+
+.suggestion-input
+  position: relative
+  & .date-range
+    &-content
+      height: 400px
+      background: white
+      border-radius: 0 0 6px 6px
+      & .range-footer
+        border-top: $brand-border
+        @include JustifyContent(space-between)
+        padding: 30px 18px 27px 18px
+        button
+          padding: 10px 27px
+          color: white
+          border: 1px solid $brand-on-focus-color
+          background: $brand-on-focus-color
+          border-radius: 50rem
+        ul
+          width: 158px
+          margin: 0
+          padding: 0
+          li
+            & span.left-side, span.right-side
+              width: 50%
+            list-style: none
+            @include JustifyContent(space-between)
+            @include Font(10px, 500)
+            color: #FE9503
+    width: 616px !important
+    border-radius: 6px
+    box-shadow: 0px 5px 30px #00000029
+    background: white
+    & .input-ranges
+      @include JustifyContent(space-between)
+      height: 50px
+      border-radius: 6px
+      position: relative
+      & span.triangle
+        position: absolute
+        border-top: $brand-border
+        border-right: $brand-border
+        width: 10px
+        background: white
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%) rotate(45deg)
+        z-index: 2
+        height: 10px
+      
+      & .start-date
+        position: relative
+        width: 50%
+        & img.icon
+          position: absolute
+          left: 24px
+          top: 35%
+          transform: translate(-50%, 0)
+          width: 17px
+        & .start-range
+          border-radius: 6px 0 0 0
+          padding-left: 50px
+          border: none
+          border-right: $brand-border
+          width: 100%
+          @include Font(16px, 500)
+          color:  $brand-inactive-font-color
+          height: 50px
+      & .end-date
+        & img.clear
+          position: absolute
+          transform: translate(-50%, 0)
+          top: 35%
+          width: 17px
+          right: 16px !important
+        & img.icon
+          position: absolute
+          left: 24px
+          top: 35%
+          transform: translate(-50%, 0)
+          width: 17px
+        position: relative
+        width: 50%
+        & .end-range
+          padding-left: 50px
+          border-radius: 0 6px 0 0
+          border-left: $brand-border
+          border: none
+          @include Font(16px, 500)
+          color:  $brand-inactive-font-color
+          width: 100%
+          height: 50px
+  & .suggestion-bar
+    position: absolute
+    top: 0
+    width: 100%
+    box-shadow: 0px 5px 30px #00000029
+    z-index: 10
+    border-radius: 6px
+    .bar-input-group
+      background: white
+      height: 50px
+      position: relative
+      width: 100%
+      .bar-input
+        border-radius: 6px 6px 0 0
+        padding-right: 20px
+        padding-left: 22px
+        height: 50px
+        @include Font(16px, 500)
+        width: 100%
+        border: none
+        border-bottom: $brand-border
+        &::focus, &:target
+          border: 1px solid transparent
+      .bar-clear
+        position: absolute
+        right: 16px
+        top: 50%
+        transform: translate(-50%, -50%)
+        & img
+          width: 12px
+          cursor: pointer
+    .bar-suggestion
+      border-radius: 0 0 6px 6px
+      background: white
+      max-height: 340px
+      overflow-x: scroll
+      padding-left: 16px
+      padding-right: 20px
+      padding-top: 15px
+      overflow-x: scroll
+      .title
+        @include Font(10px, 500)
+        text-transform: uppercase
+        color: $brand-inactive-font-color
+        margin-bottom: 7px
+      .suggestion-results
+        margin: 8px 0
+        padding: 8px
+        @include JustifyContent(flex-start)
+        align-items: flex-start
+        &:hover
+          background: rgba($color: $brand-on-focus-color, $alpha: .1)
+          border-radius: 6px
+          cursor: pointer
+          transition: .2s linear all
+        img
+          margin-right: 8px
+          margin-top: 4px
+          width: 10px
+        span
+          text-transform: capitalize
+          @include Font(14px, 500)
+          line-height: .5
+
+        small
+          @include Font(10px, 400)
+          color: $brand-inactive-font-color
+          line-height: .5
+    .bar-number-of-person
+      background: white
+      border-radius: 0 0 6px 6px
+      height: auto
+      margin-top: 50px
+      padding: 15px 15px
+      .list
+        margin-top: 10px
+        .person-list
+          margin-bottom: 15px
+          @include JustifyContent(space-between)
+          .left-side
+            @include JustifyContent(space-between)
+            width: 50%
+            @include Font(12px, 500)
+          .right-side
+            width: 50%
+            @include JustifyContent(space-between)
+            .number
+              display: block
+              margin-top: 10px
+              @include Font(14px, 500)
+            .buttons
+              &:disabled
+                color: $brand-inactive-font-color
+              @include Font(14px, 500)
+              background: white
+              border-radius: 50%
+              border: $brand-border
+              width: 20px
+              height: 20px
+              @include JustifyContent(center)
+        .title
+          @include Font(10px, 500)
+          text-transform: uppercase
+          color: $brand-inactive-font-color
+        button
+          @include Font(14px, 500)
+          width: 100%
+          padding: 10px
+          border-radius: 50rem
+          background: $brand-on-focus-color
+          color: white
+          margin-top: 10px
+          border: 1px solid $brand-on-focus-color
+        .children-list
+          margin: 5px 0
+          padding-right: 5px !important
+          padding-left: 5px !important

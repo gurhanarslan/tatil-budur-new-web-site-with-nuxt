@@ -1,0 +1,59 @@
+@import '../variant';
+@import '../fonts.scss';
+$brand: $brand-on-focus-color;
+$grey-25: #e6e6e6;
+$grey-5: #fcfcfc;
+
+.input-checkbox {
+    border: 0; 
+    clip: rect(0 0 0 0); 
+    height: 1px; margin: -1px; 
+    overflow: hidden; 
+    padding: 0; 
+    position: absolute; 
+    width: 1px;
+  }
+  
+  .checkbox {
+      margin-top: 20px;
+      position: relative;
+    input:checked + label > svg {
+      height: 16px;
+      animation: draw-checkbox ease-in-out 0.2s forwards;
+    }
+    
+    label:active::after {
+      background-color: $grey-25;
+    }
+    
+    p {
+      color: $brand;
+      margin-top: 10px;
+      @include Font(14px, 400);
+      line-height: 1.4;
+      cursor: pointer;
+      position: relative;
+    }
+    .checkbox-field {
+        height: 20px;
+        width: 20px;
+        margin-right: .5rem;
+        float: left;
+        border: 1px solid $brand;
+        border-radius: 3px;
+        transition: 0.15s all ease-out; 
+        position: relative;
+        svg {
+            fill: $brand;
+            stroke-width: 2px;
+            height: 12px; //Firefox fix
+            width: 12px;
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            stroke-dasharray: 33; //Firefox fix
+          }
+    }
+    
+  }
+  

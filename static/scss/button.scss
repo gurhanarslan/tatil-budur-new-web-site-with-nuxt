@@ -1,0 +1,20 @@
+@import './GetDeviceSize.scss';
+button.btn.search {
+    &.sm {
+    height: 30px!important;
+    }
+    border-radius: 50rem;
+    height: 50px;
+    position: relative;
+    padding:  15px 30px;
+    &.primary {
+     background: #115bb9;
+     color: white !important;
+     border: 1px solid #115bb9;
+     @include Font(14px, 700);
+    }
+}
+
+button {
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+@import '../fonts.scss';
+@import '../variant';
+.sign-up-section {
+    & h1 {
+        @include Font(24px, 500);
+      }
+    @include JustifyContent(space-between);
+    background-color: #FEC610;
+    margin-top: 40px;
+    border-radius: 16px;
+    & img {
+        width: 35%;
+    }
+    & .right-side {
+        @include MainDescriptions();
+        width: 65%;
+    }
+    button {
+        @include SmallButton(15px 32px, white, 50px, 1px solid white);
+        @include Font(14px, 700);
+    }
+}

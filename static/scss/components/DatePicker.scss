@@ -1,0 +1,83 @@
+@import '../fonts.scss';
+@import '../variant';
+.mx-datepicker-inline {
+  width: 100% !important;
+  .mx-range-wrapper {
+    width: 100% !important;
+    .mx-calendar {
+      width: 50% !important;
+    }
+  }
+  .mx-calendar-content .cell {
+    @include Font(12px, 400);
+    position: relative;
+    color: $brand-font-color;
+  }
+  td.special-day::after {
+      content: '•';
+      position: absolute;
+      top: -3px;
+      right: 9px;
+      font-size: 16px;
+      color: #FE9503;
+  }
+  .mx-calendar-content .cell.disabled {
+    color: rgba($color: $brand-font-color, $alpha: 0.3) !important;
+    background: white !important;
+  }
+  .mx-calendar-content .cell.active {
+    // & + .cell.in-range {
+    &.first-in-active div {
+      background: transparent
+        linear-gradient(
+          90deg,
+          rgba(54, 90, 173, 0.44314) 0%,
+          rgba(63, 83, 108, 0.15) 100%
+        )
+        0% 0% no-repeat padding-box;
+      padding: 7px;
+      border-radius: 17px 0 0 17px;
+      background: transparent
+        linear-gradient(90deg, #365aad71 0%, rgba(63, 83, 108, 0.15) 100%) 0% 0%
+        no-repeat padding-box;
+    }
+    &.last-in-active div {
+      background: transparent
+        linear-gradient(
+          90deg,
+          rgb(54, 90, 173) 0%,
+          rgb(63, 83, 108) 100%
+        )
+        0% 0% no-repeat padding-box;
+      padding: 7px;
+      border-radius: 0 17px 17px 0;
+      -webkit-box-shadow: -68px 0px 47px -3px #365aad;
+      box-shadow: -68px 0px 47px -3px #365aad;
+      background: transparent
+        linear-gradient(90deg, rgba(63, 83, 108, 0.15) 0%, #365aad71 100%) 0% 0%
+        no-repeat padding-box;
+    }
+    color: white !important;
+    border-radius: 50rem;
+    background: #3659ad;
+    box-shadow: 0px 3px 6px #2a5ab34d;
+  }
+  .mx-calendar-content .cell.in-range {
+    background: rgba($color: $brand-font-color, $alpha: 0.15);
+    &:nth-last-child(1) {
+      border-radius: 0px 6px 6px 0px;
+    }
+  }
+  .mx-btn {
+    @include Font(10px, 500);
+    color: $brand-inactive-font-color;
+  }
+  .mx-table-date td,
+  .mx-table-date th {
+    @include Font(12px, 500);
+    color: $brand-inactive-font-color;
+  }
+  thead {
+    margin-bottom: 20px !important;
+  }
+}

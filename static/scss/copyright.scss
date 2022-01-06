@@ -1,0 +1,46 @@
+@import './variant';
+@import './fonts.scss';
+.copyright {
+    padding: 0 90px;
+  & .top {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    & strong {
+        @include Font(14px, 500);
+        margin-right: 5px;
+    }
+    & a {
+        @include Font(12px, 400);
+        text-decoration: none;
+        color: $brand-soft-color;
+        margin: 0 5px;
+    }
+  }
+  & .middle {
+      border-top: $brand-border;
+      border-bottom: $brand-border;
+    padding: 0px 10px;
+      @include JustifyContent(space-between);
+    & .left-side {
+        @include JustifyContent(flex-start);
+        & strong {
+            @include Font(14px, 500);
+            margin-right: 5px;     
+          }
+          & img.partner {
+             width: 133px;
+          }
+    }
+      & img.logos {
+         width: 666px;
+      }
+  }
+  & .bottom {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+      @include Font(10px, 400);
+      color: $brand-soft-color;
+  }
+}

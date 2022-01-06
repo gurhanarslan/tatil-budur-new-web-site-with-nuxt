@@ -1,0 +1,54 @@
+@import '../fonts.scss';
+@import '../variant';
+.suggestions {
+  &-list-item {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+  & p.description {
+    line-height: 1.8;
+    @include Font(16px, 400);
+    color: rgba($color: $brand-font-color, $alpha: .5) !important; 
+    margin-bottom: 19px;
+  }
+background-color: #fdf2ed;
+  &-product {
+    border-radius: 13px;
+    position: relative;
+    border-radius: 13px;
+    height: 200px;
+    & img {
+      border-radius: 13px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    & .content {
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+      color: white;
+      & h6 {
+        @include Font(14px, 700);
+        color: white;
+      }
+      & p.count {
+        @include Font(12px, 400);
+        margin: 2px 0;
+        color: white;
+      }
+    }
+  }
+  & .view-all {
+      background-color: $brand-on-focus-color;
+      height: 200px;
+      border-radius: 13px;
+      flex-direction: column;
+      @include JustifyContent(center);
+      & span {
+          margin: 10px 0;
+          @include Font(14px, 700);
+          color: white;
+      }
+  }
+}

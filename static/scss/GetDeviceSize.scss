@@ -1,0 +1,8 @@
+@function get-vw($target) { 
+    $vw-context: (1000*.01) * 1px;
+    @return calc($target / $vw-context) * 1vw;
+}
+@function get-vh($target) { 
+    $vw-context: (1000*.01) * 1px;
+    @return calc($target / $vw-context) * 1vh;
+}

@@ -1,0 +1,112 @@
+$medium: 500;
+$regular: 400;
+$semi-bold: 600;
+$bold: 700;
+@mixin Font($size, $weight) {
+    font-weight: $weight;
+    font-size: $size !important;
+    font-family: $font-family;
+    color: $brand-font-color;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@mixin MainTitle {
+    @include Font(30px, bold);
+}
+@mixin MainTitle24{
+    @include Font(24px, bold);
+}
+@mixin MainDescriptions{
+    @include Font(24px, normal);
+}
+@mixin MoreHoliday {
+    @include Font(22px, 500);
+}
+@mixin AppText {
+    @include Font(20px, 600);
+}
+@mixin MiddleDescription {
+    @include Font(16px, normal);
+}
+@mixin MiddleTitle {
+    @include Font(16px, 600);
+}
+@mixin InactiveMiddleDescription {
+    @include Font(16px, normal);
+    color: $brand-inactive-font-color;
+}
+@mixin Text {
+    @include Font(14px, 400);
+}
+@mixin TextMedium {
+    @include Font(14px, 500);
+}
+@mixin InactiveText {
+    @include Font(14px, normal);
+    color: $brand-inactive-font-color;
+}
+@mixin ButtonText {
+    @include Font(14px, 600);
+    color: $brand-font-color;
+}
+@mixin SmallButtonText {
+    @include Font(12px, 600);
+    color: $brand-font-color;
+}
+@mixin SecondaryText {
+    @include Font(12px, normal);
+}
+@mixin SecondaryTextRegular {
+    @include Font(12px, 400);
+}
+@mixin SecondaryInactiveText {
+    @include Font(12px, normal);
+    color: $brand-inactive-font-color;
+}
+@mixin SecondaryTextBold($weight) {
+    @include Font(12px, $weight);
+}
+@mixin TagsText($weight) {
+    @include Font(10px, $weight);
+}
+
+@mixin SmallButton ($padding, $background, $height, $border) {
+    padding: $padding;
+    height: $height;
+    border-radius: 50rem;
+    cursor: pointer;
+    @include Text();
+    border: $border;
+    margin-right: 15px;
+    background:$background;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+}

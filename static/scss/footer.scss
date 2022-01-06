@@ -1,0 +1,125 @@
+@import './fonts.scss';
+@import './variant';
+footer {
+  width: 100%;
+  max-width: 1360px;
+  margin: auto;
+  background-color: #f8f4f0;
+  padding-bottom: 13px !important;
+  margin-top: 40px;
+  position: relative;
+  & .alert {
+    margin-top: 30px;
+    @include Font(12px, 400);
+    color: rgba($color: $brand-soft-color, $alpha: .54);
+  }
+  & img.call-center {
+    position: absolute;
+    width: 144px;
+    right: 80px;
+    bottom: 0;
+  }
+  & .footer-header {
+    & img.logo {
+      filter: brightness(0%);
+      width: 150px;
+    }
+    & span {
+      @include Font(22px, 500);
+      margin: 0;
+      padding: 0;
+      &.first {
+        color: $brand-on-focus-color;
+      }
+      &.second {
+        color: #709cef;
+      }
+      &.third {
+        color: #ff7f15;
+      }
+    }
+  }
+  & .footer-body {
+      & .search-links {
+          margin-top: 15px !important;
+      }
+      & .etbis {
+        margin-top: 20px;
+          width: 73px;
+      }
+      ul {
+          margin: 0;
+          padding: 0;
+          li {
+            @include Font(12px, 400);
+            color: $brand-soft-color;
+            width: 100%;
+            list-style-type: none;
+            @include JustifyContent(flex-start);
+            line-height: 2;
+            & img {
+                width: 11px;
+                margin-right: 16px
+            }
+            & span {
+                @include Font(14px, 500);
+                text-transform: capitalize;
+            }
+          }
+      }
+     .title {
+         @include Font(14px, 500);
+         text-transform: capitalize;
+     }  
+  }
+  & .footer-of-footer {
+    margin-top: 40px;
+    &  .follow-us {
+      display: flex;
+      align-items: center;
+      @include JustifyContent(space-between);
+      @include Font(16px, 700);
+      & img {
+        width: 18px;
+        margin-right: 20px;
+      }
+      & span {
+        @include Font(14px, 400);
+      }
+    }
+    & .call-us {
+      @include JustifyContent(space-between);
+      & .left-side {
+        width: 40%;
+        @include JustifyContent(flex-start);
+        @include Font(16px, 700);
+        & img {
+          margin-left: 10px;
+          width: 17px;
+        }
+      }
+      & .right-side {
+        padding-left: 30px;
+        border-left: $brand-border;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        & small {
+          @include Font(12px, 500);
+          &.or {
+            text-transform: uppercase;
+            @include Font(12px, 500);
+            color: rgba($color: $brand-soft-color, $alpha: .5)
+          }
+        }
+        & big, big a {
+          text-decoration: none;
+          @include Font(20px, 500);
+        }
+        & span {
+          @include Font(16px, 500);
+        }
+      }
+    }
+  }
+}

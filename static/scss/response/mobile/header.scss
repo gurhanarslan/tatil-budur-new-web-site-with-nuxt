@@ -1,0 +1,10 @@
+@import '../../variant';
+@import '../../fonts.scss';
+@media (min-width: 641px) {
+  header {
+    @include JustifyContent(space-between);
+    padding: 0 23px;
+    height: 70px;
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  }
+}

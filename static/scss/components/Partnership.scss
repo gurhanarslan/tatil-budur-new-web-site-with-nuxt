@@ -1,0 +1,33 @@
+@import '../variant';
+@import '../fonts.scss';
+.partnership {
+    margin:auto;
+    margin-top: 40px;
+ @include JustifyContent(space-between);
+ width: 650px;
+  & .partner {
+      @include JustifyContent(space-between);
+      width: 260px;
+      height: 120px;
+      & .left-side {
+          width:30%;
+          & img {
+            width: 100%;
+          }
+      }
+      & .right-side {
+          width: 70%;
+          &.with-image {
+              line-height: .5
+          }
+          @include  Font(16px, 500);
+          & img {
+              display: block;
+              width: 184px
+          }
+          & .description {
+              @include  Font(14px, 400);
+          }
+      }
+  }
+}

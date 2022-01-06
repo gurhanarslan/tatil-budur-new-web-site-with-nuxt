@@ -1,0 +1,46 @@
+@import './main.scss';
+header {
+  @include JustifyContent(space-between);
+  padding-left: get-vw(25px);
+  padding-top: get-vh(24px);
+  padding-bottom: get-vh(19px);
+  border-bottom: $brand-border;
+  & img#logo {
+    width: 180px;
+  }
+  & nav {
+    position: relative;
+    & ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      @include JustifyContent(flex-start);
+      li {
+        &.active,
+        &.nav-item {
+          @include Text();
+        }
+        @include InactiveText();
+        margin: 0 get-vw(5px);
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        & img {
+          width: get-vw(7px);
+          height: get-vh(5px);
+          margin-left: get-vw(5px);
+        }
+      }
+    }
+  }
+  & #actions {
+    @include JustifyContent(flex-end);
+    button {
+      @include SmallButton(6px 24px, white, auto, 1px solid #6f7e8f4d);
+      & img {
+        margin-right: get-vw(5px);
+      }
+    }
+  }
+}

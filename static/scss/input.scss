@@ -1,0 +1,34 @@
+@import './GetDeviceSize.scss';
+@mixin input {
+  border: $brand-border;
+  border-radius: 6px;
+  @include Font(14px, 500);
+  padding: 17px 6px 15px 35px;
+  width: 100%;
+  height: 50px;
+}
+
+.input-form {
+  width: 100%;
+  position: relative;
+  span {
+    position: absolute;
+    top: 16px;
+    left: 10px
+  }
+  input {
+    @include input();
+    &:focus {
+      color: $brand-on-focus-color !important;
+      border: $brand-border-color-on-focus !important;
+    }
+    &:disabled {
+      border: 1px solid $brand-inactive-font-color;
+      color: $brand-inactive-font-color;
+    }
+    &::placeholder {
+      @include Font(14px, 500);
+      color: $brand-inactive-font-color;
+    }
+  }
+}
